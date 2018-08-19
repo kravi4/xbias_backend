@@ -1,11 +1,3 @@
-from newsapi import NewsApiClient
-import pymysql
-import sys
-import hashlib
-
-news_api_key="915217c3b0e343039cc3859ff8445d8a"
-
-
 # Amazon Aurora Credentials
 REGION = 'us-east-2'
 
@@ -62,7 +54,7 @@ def input_into_article_table():
 		dic["title"]=dic["title"].replace('"', '""')
 
 
-		article_hash_string=dic["source"]["name"]+" "+dic["title"]+" "+dic["author"]+" "+dic["publishedAt"]
+		article_hash_string=dic["source"]["name"]+" "+dic["title"]+" "+dic["author"]
 		article_hash_entries.append(hashlib.sha256(str(article_hash_string).encode()).hexdigest())
 		source_ids.append(dic["source"]["id"])
 		source_names.append(dic["source"]["name"])
@@ -104,12 +96,14 @@ def input_into_article_table():
 		cur.execute("""SELECT article_hash_id FROM article_table""")
 		result = cur.fetchall()
 
+		final_results=[]
+		for i in range(len(result)):
+			final_results.append(result[i][0])
 
 		if (len(result)>0):
 			removal_list=[]
 			for i in range(len(article_hash_entries)):
-
-				if article_hash_entries[i] in result[i][0]:
+				if article_hash_entries[i] in final_results:
 					removal_list.append(i)
 
 			for index in sorted(removal_list, reverse=True):
