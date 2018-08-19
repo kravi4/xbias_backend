@@ -1,3 +1,2 @@
 newsapi-python
 pymysql
-hashlib
