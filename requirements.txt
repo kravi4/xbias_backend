@@ -1,0 +1,4 @@
+newsapi-python
+pymysql
+sys
+hashlib
