@@ -1,3 +1,11 @@
+from newsapi import NewsApiClient
+import pymysql
+import sys
+import hashlib
+
+news_api_key="915217c3b0e343039cc3859ff8445d8a"
+
+
 # Amazon Aurora Credentials
 REGION = 'us-east-2'
 
