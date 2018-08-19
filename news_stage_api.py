@@ -104,11 +104,14 @@ def input_into_article_table():
 		cur.execute("""SELECT article_hash_id FROM article_table""")
 		result = cur.fetchall()
 
+
 		if (len(result)>0):
 			removal_list=[]
 			for i in range(len(article_hash_entries)):
-				if article_hash_entries[i] in result[i]:
+
+				if article_hash_entries[i] in result[i][0]:
 					removal_list.append(i)
+
 			for index in sorted(removal_list, reverse=True):
 				del article_hash_entries[index]
 				del source_ids[index]
