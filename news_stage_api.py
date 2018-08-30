@@ -51,7 +51,7 @@ def input_into_article_table():
 		if isinstance(dic["url"], type(None)):
 			dic["url"] = "No Listed url"
 		if isinstance(dic["urlToImage"], type(None)):
-			dic["urlToImage"] = "No Listed urlToImage"
+			dic["urlToImage"] = "https://wscreenwallpapers.com/wp-content/uploads/2015/03/russia-flag-1080p-171.jpg"
 		if isinstance(dic["publishedAt"], type(None)):
 			dic["publishedAt"] = "No Listed timestamp"
 
