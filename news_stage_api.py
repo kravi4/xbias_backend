@@ -21,7 +21,40 @@ newsapi = NewsApiClient(api_key=news_api_key)
 top_headlines = newsapi.get_top_headlines(language='en', country='us')
 
 # News Bias - Staging
-news_bias_hashing={'the-huffington-post': 0.816257115, 'msnbc': 1.212843498, 'buzzfeed': 1.212843498, 'politico': 14.18510649, 'axios': 19.78161114, 'the-new-york-times': 19.78161114, 'the-washington-post': 19.78161114, 'the-guardian-uk': 19.78161114, 'the-guardian-au': 19.78161114, 'cnn': 26.89414214, 'nbc-news': 35.43436938, 'bbc-news': 35.43436938, 'associated-press': 40.13123399, 'abc-news': 45.01660027, 'abc-news-au': 45.01660027, 'usa-today': 50.0, 'reuters': 54.98339973, 'bloomberg': 54.98339973, 'cbs-news': 54.98339973, 'the-wall-street-journal': 59.86876601, 'time': 59.86876601, 'the-economist': 64.56563062, 'daily-mail': 80.21838886, 'the-hill': 83.20183851, 'national-review': 93.08615797, 'the-washington-times': 94.26758241, 'the-american-conservative': 98.201379, 'fox-news': 99.18374288, 'breitbart-news': 99.63157601}
+news_bias_hashing={'the-huffington-post': 0.816257115, 'msnbc': 1.212843498, 'buzzfeed': 1.212843498, 'politico': 14.18510649, 'axios': 19.78161114, 'the-new-york-times': 19.78161114, 'the-washington-post': 19.78161114, 'the-guardian-uk': 19.78161114, 'the-guardian-au': 19.78161114, 'cnn': 26.89414214, 'nbc-news': 35.43436938, 'bbc-news': 35.43436938, 'associated-press': 40.13123399, 'abc-news': 45.01660027, 'abc-news-au': 45.01660027, 'usa-today': 50.0, 'reuters': 54.98339973, 'bloomberg': 54.98339973, 'cbs-news': 54.98339973, 'the-wall-street-journal': 59.86876601, 'time': 59.86876601, 'the-economist': 64.56563062, 'daily-mail': 75.21838886, 'the-hill': 81.20183851, 'national-review': 82.08615797, 'the-washington-times': 83.26758241, 'the-american-conservative': 85.201379, 'fox-news': 90.18374288, 'breitbart-news': 99.63157601}
+
+# News Image hashing
+news_image_hashing = {'the-huffington-post': 'https://www.underconsideration.com/brandnew/archives/huffpost_logo.png', 
+					  'msnbc': 'https://www.seeklogo.net/wp-content/uploads/2015/08/msnbc-logo-vector-download.jpg',
+					  'buzzfeed': 'https://www.everplans.com/sites/default/files/styles/article_header_image/public/buzzfeed-750.jpg?itok=E8sS_n6l',
+					  'politico': 'https://static.politico.com/da/f5/44342c424c68b675719324b1106b/politico.jpg',
+					  'axios': 'https://pmcvariety.files.wordpress.com/2017/11/axios1.png?w=1000&h=563&crop=1',
+					  'the-new-york-times': 'https://www.famouslogos.net/images/new-york-times-logo.jpg',
+					  'the-washington-post': 'https://s8637.pcdn.co/wp-content/uploads/2017/03/washington-post-logo-e1490379930525.jpg',
+					  'the-guardian-uk': 'http://www.webdo.tn/wp-content/uploads/2018/02/guardian.jpg',
+					  'the-guardian-au': 'http://www.webdo.tn/wp-content/uploads/2018/02/guardian.jpg',
+					  'cnn': 'https://cdn.logojoy.com/wp-content/uploads/2017/07/cnn-logo-original-hd-png-transparent.png',
+					  'nbc-news': 'https://aclion.com/wp-content/uploads/2018/04/NBC-News-Logo.png',
+					  'bbc-news': 'https://m.files.bbci.co.uk/modules/bbc-morph-news-waf-page-meta/2.2.2/bbc_news_logo.png',
+					  'associated-press': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Associated_Press_logo_2012.svg/2000px-Associated_Press_logo_2012.svg.png'
+					  'abc-news': 'https://www.broadcastingcable.com/.image/t_share/MTU0MjAzNTAyODExNDI0MDgw/abc-news-logo-resized-bcjpg.jpg',
+					  'abc-news-au': 'https://www.broadcastingcable.com/.image/t_share/MTU0MjAzNTAyODExNDI0MDgw/abc-news-logo-resized-bcjpg.jpg',
+					  'usa-today': 'https://3degreesinc.com/wp-content/uploads/2018/05/Color-USA-Today-Logo.jpg',
+					  'reuters': 'https://i1.wp.com/www.thedailychronic.net/wp-content/uploads/2014/06/Reuters-logo.jpg',
+					  'bloomberg': 'https://www.everplans.com/sites/default/files/styles/article_header_image/public/bloomberg-750.jpg?itok=_eVS4ABN',
+					  'cbs-news': 'https://upload.wikimedia.org/wikipedia/commons/5/52/CBS_News_logo.png',
+					  'the-wall-street-journal': 'https://www.logosvgpng.com/wp-content/uploads/2018/03/the-wall-street-journal-logo-vector.png',
+					  'time': 'https://logos-download.com/wp-content/uploads/2016/05/Time_Magazine_logo_red_bg.png',
+					  'the-economist': 'https://logos-download.com/wp-content/uploads/2016/05/The_Economist_logo.png',
+					  'daily-mail': 'https://cdn.worldvectorlogo.com/logos/daily-mail.svg',
+					  'the-hill': 'https://www.afsc.org/sites/default/files/styles/maxsize/public/images/The%20Hill%20logo.jpg?itok=ogKsb3Jo',
+					  'national-review': 'http://www.will-law.org/wp-content/uploads/2018/06/nationalreview-lg.png',
+					  'the-washington-times': 'http://www.johnellis.com/wp-content/uploads/2018/03/Washington_Times_John_Ellis_water.png',
+					  'the-american-conservative': 'https://ilsr.org/wp-content/uploads/2017/09/The-American-Conservative-logo.png',
+					  'fox-news': 'https://vignette.wikia.nocookie.net/logopedia/images/a/a6/Fox-news-logo-1.jpg/revision/latest?cb=20120407163458',
+					  'breitbart-news': 'https://www.thewrap.com/wp-content/uploads/2016/11/Breitbart-logo.jpg'
+					  }
+
 
 
 def input_into_article_table():
@@ -51,7 +84,8 @@ def input_into_article_table():
 		if isinstance(dic["url"], type(None)):
 			dic["url"] = "No Listed url"
 		if isinstance(dic["urlToImage"], type(None)):
-			dic["urlToImage"] = "https://wscreenwallpapers.com/wp-content/uploads/2015/03/russia-flag-1080p-171.jpg"
+			if dic["source"]["id"] in list(news_bias_hashing.keys()):
+				dic["urlToImage"] = news_image_hashing[dic["source"]["id"]]
 		if isinstance(dic["publishedAt"], type(None)):
 			dic["publishedAt"] = "No Listed timestamp"
 
