@@ -36,8 +36,8 @@ news_image_hashing = {'the-huffington-post': 'https://www.underconsideration.com
 					  'cnn': 'https://cdn.logojoy.com/wp-content/uploads/2017/07/cnn-logo-original-hd-png-transparent.png',
 					  'nbc-news': 'https://aclion.com/wp-content/uploads/2018/04/NBC-News-Logo.png',
 					  'bbc-news': 'https://m.files.bbci.co.uk/modules/bbc-morph-news-waf-page-meta/2.2.2/bbc_news_logo.png',
-					  'associated-press': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Associated_Press_logo_2012.svg/2000px-Associated_Press_logo_2012.svg.png'
-					  'abc-news': 'https://www.broadcastingcable.com/.image/t_share/MTU0MjAzNTAyODExNDI0MDgw/abc-news-logo-resized-bcjpg.jpg',
+					  'associated-press': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Associated_Press_logo_2012.svg/2000px-Associated_Press_logo_2012.svg.png',
+					  'abc-news': "https://www.broadcastingcable.com/.image/t_share/MTU0MjAzNTAyODExNDI0MDgw/abc-news-logo-resized-bcjpg.jpg",
 					  'abc-news-au': 'https://www.broadcastingcable.com/.image/t_share/MTU0MjAzNTAyODExNDI0MDgw/abc-news-logo-resized-bcjpg.jpg',
 					  'usa-today': 'https://3degreesinc.com/wp-content/uploads/2018/05/Color-USA-Today-Logo.jpg',
 					  'reuters': 'https://i1.wp.com/www.thedailychronic.net/wp-content/uploads/2014/06/Reuters-logo.jpg',
@@ -86,6 +86,8 @@ def input_into_article_table():
 		if isinstance(dic["urlToImage"], type(None)):
 			if dic["source"]["id"] in list(news_bias_hashing.keys()):
 				dic["urlToImage"] = news_image_hashing[dic["source"]["id"]]
+			else:
+				dic["urlToImage"] = "No Listed UrlToImge"
 		if isinstance(dic["publishedAt"], type(None)):
 			dic["publishedAt"] = "No Listed timestamp"
 
