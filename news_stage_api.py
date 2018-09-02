@@ -75,7 +75,7 @@ def input_into_article_table():
 			dic["source"]["id"] = "No Listed Source id"
 		if isinstance(dic["source"]["name"], type(None)):
 			dic["source"]["name"] = "No Listed Source Name"
-		if isinstance(dic["author"], type(None)):
+		if isinstance(dic["author"], type(None)) or 'http' in dic["author"]:
 			dic["author"] = "No Listed Author"
 		if isinstance(dic["title"], type(None)):
 			dic["title"] = "No Listed Title"
