@@ -137,7 +137,7 @@ def input_into_article_table():
 	conn = pymysql.connect(rds_host, user = username, passwd = password, db= db_name, connect_timeout = 10, autocommit=True)
 	with conn.cursor() as cur:
 		cur.execute("""CREATE TABLE IF NOT EXISTS article_table (article_hash_id VARCHAR(255), source_id TEXT, source_name TEXT, author TEXT, title TEXT, description TEXT, url TEXT, image_url TEXT, publish_timestamp TEXT,  article_bias_score FLOAT, topic TEXT);""")
-		cur.execute("""SELECT article_hash_id FROM article_table""")
+		cur.execute("""SELECT title FROM article_table""")
 		result = cur.fetchall()
 
 		final_results=[]
